@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recycler"
+    android:padding="30dp">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/todos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="todos" />
+
+        <RadioButton
+            android:id="@+id/coche"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="coche" />
+
+        <RadioButton
+            android:id="@+id/moto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="moto" />
+
+        <RadioButton
+            android:id="@+id/bici"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="bici" />
+
+        <RadioButton
+            android:id="@+id/patinete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="patinete" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Busque por marca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pauwu"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#FFE7E7" />
+
+    <Button
+        android:id="@+id/addpatinete"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="aniadirpatinete"
+        android:text="patinete"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addbici"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#FFE7E7" />
+
+    <Button
+        android:id="@+id/addbici"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="aniadirbici"
+        android:text="bicicleta"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addcoche"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#FFE7E7" />
+
+    <Button
+        android:id="@+id/addcoche"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="aniadircoche"
+        android:text="coche"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/addmoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#FFE7E7" />
+
+    <Button
+        android:id="@+id/addmoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="aniadirmoto"
+        android:text="moto"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:rippleColor="#FFE7E7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
