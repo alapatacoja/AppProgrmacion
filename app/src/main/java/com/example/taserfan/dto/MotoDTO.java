@@ -1,4 +1,4 @@
-package com.example.taserfan.DTO;
+package com.example.taserfan.dto;
 
 import java.sql.Date;
 
@@ -8,7 +8,7 @@ public class MotoDTO extends VehiculoDTO {
     private int cilindrada;
 
     public MotoDTO(String matricula, String marca, String color, int preciohora, String descripcion, int bateria, Date fecha, int carnettipo, String estado, int velocidadmax, int cilindrada) {
-        super(matricula, marca, color, preciohora, descripcion, bateria, fecha, carnettipo, estado);
+        super(matricula, marca, color, preciohora, descripcion, bateria, fecha, carnettipo, estado, "moto");
         this.velocidadmax = velocidadmax;
         this.cilindrada = cilindrada;
     }

@@ -1,4 +1,4 @@
-package com.example.taserfan.DTO;
+package com.example.taserfan.dto;
 
 import java.sql.Date;
 
@@ -13,8 +13,9 @@ public class VehiculoDTO {
     private Date fecha;
     private int carnettipo;
     private String estado;
+    private String tipovehiculo;
 
-    public VehiculoDTO(String matricula, String marca, String color, int preciohora, String descripcion, int bateria, Date fecha, int carnettipo, String estado) {
+    public VehiculoDTO(String matricula, String marca, String color, int preciohora, String descripcion, int bateria, Date fecha, int carnettipo, String estado, String tipovehiculo) {
         this.matricula = matricula;
         this.marca = marca;
         this.color = color;
@@ -24,6 +25,11 @@ public class VehiculoDTO {
         this.fecha = fecha;
         this.carnettipo = carnettipo;
         this.estado = estado;
+        this.tipovehiculo = tipovehiculo;
+    }
+
+    public String getTipovehiculo() {
+        return tipovehiculo;
     }
 
     public String getMatricula() {

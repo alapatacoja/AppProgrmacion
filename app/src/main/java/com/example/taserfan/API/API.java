@@ -4,7 +4,8 @@ public class API {
     public static class Routes {
         // Oracle
         public static final String AUTHENTICATE = "/authenticate";
-        public static final String URL = "http://127.0.0.1:4567";
+        public final static String URL = "http://localhost:4567/api/";
+//        public final static String URL = "http://192.168.1.130:4567/api/";
     }
 
 

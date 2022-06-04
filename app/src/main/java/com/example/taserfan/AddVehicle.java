@@ -10,6 +10,10 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.taserfan.dto.CocheDTO;
+import com.example.taserfan.dto.Model;
+
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +29,9 @@ public class AddVehicle extends AppCompatActivity {
     private EditText plazas;
     private EditText ruedas;
     private EditText tamanio;
+    private String tipoVehiculo;
+    EditText matricula, marca, precio, bateria, fecha, desc;
+    Spinner coloresspinner, estadospinner, carnetspinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +40,16 @@ public class AddVehicle extends AppCompatActivity {
 
         ImageView iconadd = findViewById(R.id.icon_add);
         TextView nombretipo = findViewById(R.id.nombrevehiculo);
-        Spinner coloresspinner = findViewById(R.id.colorvehiculo);
-        Spinner estadospinner = findViewById(R.id.estadovehiculo);
-        Spinner carnetspinner = findViewById(R.id.carnetvehiculo);
+         coloresspinner = findViewById(R.id.colorvehiculo);
+         estadospinner = findViewById(R.id.estadovehiculo);
+         carnetspinner = findViewById(R.id.carnetvehiculo);
+
+        matricula = findViewById(R.id.matricula);
+        marca = findViewById(R.id.marcavehiculo);
+         precio = findViewById(R.id.preciovehiculo);
+         bateria = findViewById(R.id.bateriavehiculo);
+         fecha = findViewById(R.id.fechavehiculo);
+         desc = findViewById(R.id.descvehiculo);
 
         puertas = findViewById(R.id.puertascoche);
         plazas = findViewById(R.id.asientoscoche);
@@ -66,15 +80,15 @@ public class AddVehicle extends AppCompatActivity {
         ArrayAdapter <String> adaptercarnet  = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, carnet);
         carnetspinner.setAdapter(adaptercarnet);
 
-        String tipo = getIntent().getStringExtra("vehiculo");
-        if (tipo.equals("coche")){
+        tipoVehiculo = getIntent().getStringExtra("vehiculo");
+        if (tipoVehiculo.equals("coche")){
             iconadd.setImageResource(R.mipmap.ic_coche_foreground);
             nombretipo.setText("Coche");
             puertas.setVisibility(View.VISIBLE);
             plazas.setVisibility(View.VISIBLE);
             colores.remove("negro");
 
-        } else if (tipo.equals("moto")){
+        } else if (tipoVehiculo.equals("moto")){
             iconadd.setImageResource(R.mipmap.ic_moto_foreground);
             nombretipo.setText("Moto");
             velocidad.setVisibility(View.VISIBLE);
@@ -82,7 +96,7 @@ public class AddVehicle extends AppCompatActivity {
             colores.remove("rojo");
             colores.remove("amarillo");
 
-        } else if (tipo.equals("bici")){
+        } else if (tipoVehiculo.equals("bici")){
             iconadd.setImageResource(R.mipmap.ic_bici_foreground);
             nombretipo.setText("Bici");
             List<String> tipos= new ArrayList<>();
@@ -93,7 +107,7 @@ public class AddVehicle extends AppCompatActivity {
             tipobici.setVisibility(View.VISIBLE);
             ArrayAdapter adapterbicitipo = new ArrayAdapter(this, android.R.layout.simple_spinner_item, tipos);
             tipobici.setAdapter(adapterbicitipo);
-        } else if (tipo.equals("patinete")){
+        } else if (tipoVehiculo.equals("patinete")){
             iconadd.setImageResource(R.mipmap.ic_patinete_foreground);
             nombretipo.setText("Patinete");
             ruedas.setVisibility(View.VISIBLE);
@@ -130,6 +144,22 @@ public class AddVehicle extends AppCompatActivity {
         estado.add("reservado");
     }
 
+    public void addVehiculolista(View view){
+        switch (tipoVehiculo){
+            case "coche":
+                Model.getInstance().getVehiculos().add(new CocheDTO(matricula.getText().toString(),
+                        marca.getText().toString(),
+                        coloresspinner.getSelectedItem().toString(),
+                        Integer.parseInt(precio.getText().toString()),
+                        desc.getText().toString(),
+                        Integer.parseInt(bateria.getText().toString())
+                        ,Date.valueOf(fecha.getText().toString()),
+                        carnetspinner.getSelectedItem().toString(),
+                        estadospinner.getSelectedItem().toString(),
+                        Integer.parseInt(plazas.getText().toString()),
+                        Integer.parseInt(puertas.getText().toString())));
+        }
+    }
 
 
 }

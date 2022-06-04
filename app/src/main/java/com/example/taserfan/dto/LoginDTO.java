@@ -1,4 +1,4 @@
-package com.example.taserfan.DTO;
+package com.example.taserfan.dto;
 
 public class LoginDTO {
 

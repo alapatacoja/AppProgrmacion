@@ -1,4 +1,4 @@
-package com.example.taserfan.DTO;
+package com.example.taserfan.dto;
 
 import java.sql.Date;
 
@@ -15,7 +15,7 @@ public class BiciDTO extends VehiculoDTO {
     }
 
     public BiciDTO(String matricula, String marca, String color, int preciohora, String descripcion, int bateria, Date fecha, int carnettipo, String estado, String tipo) {
-        super(matricula, marca, color, preciohora, descripcion, bateria, fecha, carnettipo, estado);
+        super(matricula, marca, color, preciohora, descripcion, bateria, fecha, carnettipo, estado, "bici");
         this.tipo = tipo;
     }
 }

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.taserfan.DTO.VehiculoDTO;
+import com.example.taserfan.dto.VehiculoDTO;
 
 import java.util.List;
 
@@ -39,8 +39,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.estado.setText(vehiculoDTO.getEstado());
         holder.color.setText(vehiculoDTO.getColor());
         holder.marca.setText(vehiculoDTO.getMarca());
-        holder.precio.setText(vehiculoDTO.getPreciohora());
-        holder.icon.setImageResource(R.mipmap.ic_bici_foreground);
+        holder.precio.setText(""+vehiculoDTO.getPreciohora());
+        if(vehiculoDTO.getTipovehiculo()=="coche")
+            holder.icon.setImageResource(R.mipmap.ic_coche_foreground);
+         else if (vehiculoDTO.getTipovehiculo()=="moto")
+            holder.icon.setImageResource(R.mipmap.ic_moto_foreground);
+         else if (vehiculoDTO.getTipovehiculo()=="bici")
+             holder.icon.setImageResource(R.mipmap.ic_bici_foreground);
+         else if (vehiculoDTO.getTipovehiculo()=="patinete")
+            holder.icon.setImageResource(R.mipmap.ic_patinete_foreground);
+         else holder.icon.setImageResource(R.drawable.ic_launcher_foreground);
     }
 
     @Override
