@@ -61,6 +61,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         notifyDataSetChanged();
     }
 
+    public void setOnClickListener(View.OnClickListener onClickListener) {
+        this.onClickListener = onClickListener;
+    }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView icon;

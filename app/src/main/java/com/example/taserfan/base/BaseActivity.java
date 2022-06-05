@@ -3,6 +3,7 @@ package com.example.taserfan.base;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,7 @@ import com.example.taserfan.API.Connector;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity {
 
     protected Connector connector;
     protected ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -50,4 +51,5 @@ public class BaseActivity extends AppCompatActivity {
         hideProgress();
     }
 
+    public abstract void onClick(View view);
 }

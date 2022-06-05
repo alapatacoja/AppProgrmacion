@@ -1,8 +1,6 @@
 package com.example.taserfan.dto;
 
 
-import java.sql.Date;
-
 public class CocheDTO extends VehiculoDTO {
 
     private int plazas;
@@ -24,7 +22,7 @@ public class CocheDTO extends VehiculoDTO {
         this.puertas = puertas;
     }
 
-    public CocheDTO(String matricula, String marca, String color, int preciohora, String descripcion, int bateria, Date fecha, int carnettipo, String estado, int plazas, int puertas) {
+    public CocheDTO(String matricula, String marca, String color, int preciohora, String descripcion, int bateria, String fecha, int carnettipo, String estado, int plazas, int puertas) {
         super(matricula, marca, color, preciohora, descripcion, bateria, fecha, carnettipo, estado, "coche");
         this.plazas = plazas;
         this.puertas = puertas;

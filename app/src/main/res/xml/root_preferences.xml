@@ -1,0 +1,28 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="Settings" >
+        <EditTextPreference
+            android:defaultValue="localhost"
+            android:key="edit_text_preference_1"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="IP" />
+        <EditTextPreference
+            android:defaultValue="4567"
+            android:key="edit_text_preference_port"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Puerto" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Tema">
+
+        <ListPreference
+            android:defaultValue="false"
+            android:entries="@array/settings_theme_entries"
+            android:entryValues="@array/settings_theme_values"
+            android:key="temassettings"
+            android:title="Tema" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

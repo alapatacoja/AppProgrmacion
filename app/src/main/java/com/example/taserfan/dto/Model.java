@@ -29,7 +29,7 @@ public class Model {
         vehiculos.add(new PatineteDTO("6666DDD", "SSCYHT", "negro", 5, null, 45, null, 3, "preparado", 3, 10));
 
         users = new ArrayList<>();
-        users.add(new LoginDTO("empleado1", "abc"));
+        users.add(new LoginDTO("alex", "uwu"));
         users.add(new LoginDTO("empleado2", "abc"));
         users.add(new LoginDTO("empleado3", "abc"));
         users.add(new LoginDTO("empleado4", "abc"));
